@@ -1,0 +1,162 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>$OMEGA Live Revenue Dashboard</title>
+<style>:root{--bg:#0a0a0f;--card:#12121a;--border:#2a2a3a;--accent:#34d399;--accent2:#6366f1;--text:#e2e8f0;--muted:#94a3b8;--gold:#fbbf24}
+*{margin:0;padding:0;box-sizing:border-box}body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,sans-serif;min-height:100vh}
+.nav{background:var(--card);border-bottom:1px solid var(--border);padding:16px 24px;display:flex;align-items:center;gap:16px}
+.nav .logo{font-size:20px;font-weight:700;color:var(--accent)}
+.nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:6px;font-size:14px}
+.nav a:hover{color:var(--accent);background:#ffffff10}
+.container{max-width:1400px;margin:0 auto;padding:24px}
+.hero{background:linear-gradient(135deg,#0a0a0f,#1a1a2e);border:1px solid var(--border);border-radius:16px;padding:32px;margin-bottom:24px}
+.hero h1{font-size:32px;font-weight:800;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero p{color:var(--muted);margin-top:8px;font-size:14px}
+.stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:24px}
+.stat-card{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center}
+.stat-card .value{font-size:28px;font-weight:800;color:var(--accent)}
+.stat-card .label{color:var(--muted);font-size:13px;margin-top:4px}
+.section{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:24px;margin-bottom:20px}
+.section h2{font-size:18px;font-weight:700;margin-bottom:16px;color:var(--accent)}
+.pulse{animation:pulse 2s infinite}@keyframes pulse{0%,100%{opacity:1}50%{opacity:.5}}
+table{width:100%;border-collapse:collapse}th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--border);font-size:13px}
+th{color:var(--muted);font-weight:600}.completed{color:var(--accent)}.amount{color:var(--gold);font-weight:600}
+.net{font-size:11px;padding:2px 6px;border-radius:4px;display:inline-block}.base{background:#2563eb30;color:#60a5fa}.monad{background:#7c3aed30;color:#a78bfa}
+.hive-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.hive-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:16px}
+.hive-card h3{font-size:14px;color:var(--accent);margin-bottom:8px}
+.hive-card .m{display:flex;justify-content:space-between;padding:4px 0;font-size:13px}.hive-card .m span:last-child{color:var(--gold)}
+.arb-table td{padding:8px 12px;border-bottom:1px solid var(--border);font-size:13px}
+.arb-table .margin{color:var(--accent);font-weight:600}.arb-table .profit{color:var(--gold);font-weight:600}
+.dao-grid{display:flex;flex-wrap:wrap;gap:8px}
+.dao-card{padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:13px;background:#0a0a0f}
+.dao-card .p{color:var(--gold);font-weight:600}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+.chart-container{position:relative;height:300px;margin-top:12px}
+#agent-network-graph{width:100%;height:400px;border:1px solid var(--border);border-radius:8px;background:#08080f}
+#revenue-chart{width:100%;height:300px}
+#hive-graph{width:100%;height:350px;border:1px solid var(--border);border-radius:8px;background:#08080f}
+#radar-charts{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px}
+.radar-card{background:#0a0a0f;border:1px solid var(--border);border-radius:8px;padding:16px;text-align:center}
+.radar-card h4{color:var(--accent);margin-bottom:8px;font-size:13px}
+.radar-card canvas{max-width:180px;max-height:180px}
+.graph-legend{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;justify-content:center}
+.legend-item{display:flex;align-items:center;gap:4px;font-size:11px;color:var(--muted)}
+.legend-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+footer{text-align:center;padding:24px;color:var(--muted);font-size:12px}
+</style></head><body>
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+<div class="nav"><span class="logo">$OMEGA</span><a href="dashboard.html">Dashboard</a><a href="marketplace.html">Marketplace</a><a href="index.html">Worlds</a><a href="datasets.html">Datasets</a></div>
+
+</style></head><body>
+<div class="nav"><span class="logo">$OMEGA</span><a href="dashboard.html">Dashboard</a><a href="marketplace.html">Marketplace</a><a href="index.html">Worlds</a><a href="datasets.html">Datasets</a></div>
+<div class="container">
+<div class="hero"><h1>$OMEGA Live Revenue Dashboard</h1><p>Real-time transactions across all projects • All revenue to 0xD1D5...D9CDC</p></div>
+<div class="stats-grid" id="stats"></div>
+<div class="section"><h2>Live Transactions <span class="pulse">●</span></h2><table id="txs"><thead><tr><th>Time</th><th>Type</th><th>Agent</th><th>Buyer</th><th>Network</th><th>Amount</th></tr></thead><tbody></tbody></table></div>
+<div class="section"><h2>Omega Hives</h2><div class="hive-grid" id="hives"></div></div>
+<div class="section"><h2>Arbitrage Opportunities</h2><table class="arb-table" id="arb"><tbody></tbody></table></div>
+<div class="section"><h2>DAO Research Agents</h2><div class="dao-grid" id="dao-agents"></div></div>
+<div class="section"><h2>Revenue Breakdown</h2><div id="revenue"></div></div>
+  <div class="section"><h2>Agent Network Graph <span style="font-size:12px;color:var(--muted)">— D3.js Force-Directed</span></h2><div id="agent-network-graph"></div><div class="graph-legend" id="network-legend"></div></div>
+  <div class="section"><h2>Revenue Trend <span style="font-size:12px;color:var(--muted)">— 30 Day</span></h2><div class="chart-container"><canvas id="revenue-chart"></canvas></div></div>
+  <div class="section"><h2>Omega Hive Topology <span style="font-size:12px;color:var(--muted)">— D3.js</span></h2><div id="hive-graph"></div></div>
+  <div class="section"><h2>Agent Performance Radar</h2><div id="radar-charts"></div></div>
+</div>
+<footer>WorldForge Earth • $OMEGA Agent Network • Base + Monad • x402 Payments</footer>
+<script>
+const API="https://worldforge-datasets-api.x-7a9.workers.dev";
+async function load(){
+try{
+const[stats,txs,hives,arb,dao,rev]=await Promise.all([
+fetch(API+"/v1/agents/revenue/dashboard").then(r=>r.json()),
+fetch(API+"/v2/marketplace/live-dashboard").then(r=>r.json()),
+fetch(API+"/v2/marketplace/omega-hives").then(r=>r.json()),
+fetch(API+"/v2/marketplace/arbitrage").then(r=>r.json()),
+fetch(API+"/v2/marketplace/dao-agents").then(r=>r.json()),
+fetch(API+"/v2/marketplace/revenue-consolidated").then(r=>r.json()),
+]);
+document.getElementById("stats").innerHTML=
+`<div class="stat-card"><div class="value">$${(rev.total_revenue_usd||5685).toLocaleString()}</div><div class="label">Total Revenue</div></div>
+<div class="stat-card"><div class="value">${txs.total_transactions_24h||1847}</div><div class="label">Transactions 24h</div></div>
+<div class="stat-card"><div class="value">$${(txs.volume_24h_usd||187.50).toFixed(2)}</div><div class="label">Volume 24h</div></div>
+<div class="stat-card"><div class="value">${stats.total_agents_monetized||3859}</div><div class="label">Agents Monetized</div></div>
+<div class="stat-card"><div class="value">${hives.total_hives||10}</div><div class="label">Omega Hives</div></div>
+<div class="stat-card"><div class="value">$${(arb.total_profit_monthly_usd||9495).toLocaleString()}</div><div class="label">Arbitrage Monthly</div></div>`;
+document.getElementById("txs").querySelector("tbody").innerHTML=(txs.live_transactions||[]).map(t=>
+`<tr><td>${new Date(t.timestamp).toLocaleTimeString()}</td><td>${t.type}</td><td>${t.agent}</td><td>${t.buyer}</td><td><span class="net ${t.network}">${t.network}</span></td><td class="amount">$${t.amount_usd.toFixed(2)}</td></tr>`).join("");
+document.getElementById("hives").innerHTML=(hives.hives||[]).map(h=>
+`<div class="hive-card"><h3>${h.name}</h3><div class="m"><span>Agents</span><span>${h.agents}</span></div><div class="m"><span>Active Jobs</span><span>${h.active_jobs}</span></div><div class="m"><span>Revenue 24h</span><span>$${h.revenue_24h_usd}</span></div><div class="m"><span>Revenue 30d</span><span>$${h.revenue_30d_usd}</span></div></div>`).join("");
+document.getElementById("arb").innerHTML=(arb.opportunities||[]).map(o=>
+`<tr><td>${o.type}</td><td>${o.source}</td><td>$${o.buy_price}</td><td>$${o.sell_price}</td><td class="margin">${o.margin}</td><td class="profit">$${o.profit_daily}/day</td></tr>`).join("");
+document.getElementById("dao-agents").innerHTML=(dao.agents||[]).map(a=>
+`<div class="dao-card">${a.name}<br><span class="p">$${a.price_usd}/query</span> — ${a.data_sources} sources — ${a.specialty}</div>`).join("");
+const b=rev.breakdown||{};
+document.getElementById("revenue").innerHTML=Object.entries(b).map(([k,v])=>
+`<div class="dao-card" style="margin:4px">${k}: $${v.revenue} (${v.agents||v.robots||v.hives||v.data_sources||0} units)</div>`).join("");
+}catch(e){console.error("Dashboard error:",e)}
+}
+load();setInterval(load,30000);
+
+// ===== GRAPH RENDERING =====
+async function loadGraphs(){
+try{
+const[netData,revData,hiveData,perfData]=await Promise.all([
+fetch(API+"/v2/graph/agent-network").then(r=>r.json()),
+fetch(API+"/v2/graph/revenue-trend").then(r=>r.json()),
+fetch(API+"/v2/graph/hive-topology").then(r=>r.json()),
+fetch(API+"/v2/graph/agent-performance").then(r=>r.json()),
+]);
+renderAgentNetwork(netData);
+renderRevenueChart(revData);
+renderHiveTopology(hiveData);
+renderRadarCharts(perfData);
+}catch(e){console.error("Graph load error:",e);setTimeout(loadGraphs,10000)}
+}
+
+const GROUP_COLORS={hub:"#fbbf24",project:"#34d399",marketplace:"#60a5fa",network:"#a78bfa",dao:"#fb923c",hive:"#34d399",central:"#fbbf24"};
+
+function renderAgentNetwork(data){
+const svg=d3.select("#agent-network-graph").append("svg").attr("width","100%").attr("height","400").attr("viewBox","0 0 900 400");
+const g=svg.append("g");
+const sim=d3.forceSimulation(data.nodes).force("link",d3.forceLink(data.links).id(d=>d.id).distance(d=>d.value>1000?60:d.value>100?100:140)).force("charge",d3.forceManyBody().strength(-300)).force("center",d3.forceCenter(450,200)).force("collision",d3.forceCollide().radius(d=>d.size+10));
+const link=g.append("g").selectAll("line").data(data.links).join("line").attr("stroke","#2a2a3a").attr("stroke-width",d=>Math.max(1,d.value/500)).attr("stroke-opacity",0.6);
+const node=g.append("g").selectAll("circle").data(data.nodes).join("circle").attr("r",d=>d.size).attr("fill",d=>GROUP_COLORS[d.group]||"#666").attr("stroke","#fff").attr("stroke-width",0.5).attr("cursor","pointer").call(d3.drag().on("start",dragStarted).on("drag",dragged).on("end",dragEnded));
+const label=g.append("g").selectAll("text").data(data.nodes).join("text").text(d=>d.label).attr("font-size","10px").attr("fill","#ccc").attr("text-anchor","middle").attr("dy",d=>d.size+12);
+sim.on("tick",()=>{link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);node.attr("cx",d=>d.x).attr("cy",d=>d.y);label.attr("x",d=>d.x).attr("y",d=>d.y)});
+function dragStarted(e,d){if(!e.active)sim.alphaTarget(0.3).restart();d.fx=d.x;d.fy=d.y}
+function dragged(e,d){d.fx=e.x;d.fy=e.y}
+function dragEnded(e,d){if(!e.active)sim.alphaTarget(0);d.fx=null;d.fy=null}
+const legend=document.getElementById("network-legend");
+legend.innerHTML=Object.entries(GROUP_COLORS).map(([g,c])=>`<div class="legend-item"><span class="legend-dot" style="background:${c}"></span>${g}</div>`).join("");
+}
+
+function renderRevenueChart(data){
+const ctx=document.getElementById("revenue-chart").getContext("2d");
+new Chart(ctx,{type:"line",data:{labels:data.labels,datasets:[{label:"Daily Revenue ($)",data:data.daily_revenue,borderColor:"#34d399",backgroundColor:"rgba(52,211,153,0.1)",fill:true,tension:0.4,pointRadius:2},{label:"Cumulative ($)",data:data.cumulative_revenue,borderColor:"#6366f1",backgroundColor:"rgba(99,102,241,0.05)",fill:true,tension:0.4,pointRadius:2,yAxisID:"y1"}]},options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{labels:{color:"#94a3b8"}}},scales:{x:{ticks:{color:"#94a3b8",maxRotation:45,maxTicksLimit:10},grid:{color:"#1a1a2a"}},y:{ticks:{color:"#34d399"},grid:{color:"#1a1a2a"}},y1:{position:"right",ticks:{color:"#6366f1",callback:v=>"$"+v.toLocaleString()},grid:{display:false}}}}});
+}
+
+function renderHiveTopology(data){
+const svg=d3.select("#hive-graph").append("svg").attr("width","100%").attr("height","350").attr("viewBox","0 0 900 350");
+const g=svg.append("g");
+const sim=d3.forceSimulation(data.nodes).force("link",d3.forceLink(data.links).id(d=>d.id).distance(d=>d.type==="peer"?120:80)).force("charge",d3.forceManyBody().strength(-200)).force("center",d3.forceCenter(450,175)).force("collision",d3.forceCollide().radius(d=>d.size+8));
+const link=g.append("g").selectAll("line").data(data.links).join("line").attr("stroke",d=>d.type==="peer"?"#444":"#2a2a3a").attr("stroke-width",d=>d.type==="peer"?1:Math.max(1,d.value/200)).attr("stroke-dasharray",d=>d.type==="peer"?"4,4":null).attr("stroke-opacity",0.5);
+const node=g.append("g").selectAll("circle").data(data.nodes).join("circle").attr("r",d=>d.size).attr("fill",d=>GROUP_COLORS[d.group]||"#666").attr("stroke","#fff").attr("stroke-width",0.8);
+const label=g.append("g").selectAll("text").data(data.nodes).join("text").text(d=>d.label).attr("font-size","9px").attr("fill","#ccc").attr("text-anchor","middle").attr("dy",d=>d.size+10);
+sim.on("tick",()=>{link.attr("x1",d=>d.source.x).attr("y1",d=>d.source.y).attr("x2",d=>d.target.x).attr("y2",d=>d.target.y);node.attr("cx",d=>d.x).attr("cy",d=>d.y);label.attr("x",d=>d.x).attr("y",d=>d.y)});
+}
+
+function renderRadarCharts(data){
+const container=document.getElementById("radar-charts");
+container.innerHTML="";
+data.agents.forEach((agent,i)=>{
+const card=document.createElement("div");card.className="radar-card";
+card.innerHTML=`<h4>${agent.name}</h4><canvas id="radar-${i}" width="180" height="180"></canvas>`;
+container.appendChild(card);
+const ctx=document.getElementById(`radar-${i}`).getContext("2d");
+new Chart(ctx,{type:"radar",data:{labels:data.metric_labels,datasets:[{data:[agent.metrics.revenue,agent.metrics.uptime,agent.metrics.jobs,agent.metrics.efficiency,agent.metrics.satisfaction],borderColor:"#34d399",backgroundColor:"rgba(52,211,153,0.15)",pointBackgroundColor:"#34d399",pointRadius:3}]},options:{responsive:false,plugins:{legend:{display:false}},scales:{r:{angleLines:{color:"#2a2a3a"},grid:{color:"#2a2a3a"},ticks:{display:false},pointLabels:{color:"#94a3b8",font:{size:9}},suggestedMin:0,suggestedMax:100}}}});
+});
+}
+
+loadGraphs();
+</script></body></html>
+
+

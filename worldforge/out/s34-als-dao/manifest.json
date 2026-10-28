@@ -1,0 +1,58 @@
+{
+ "schemaVersion": "worldforge-sneeze-mount-package/0.1",
+ "world": "s34-als-dao",
+ "sourceHash": "8e5a41ec2678a67f1c398568469dd06fa4614bfb56ab184d85d8b2a38e2e98cc",
+ "files": {
+  "cards.json": "136bead3d70497b79dd4366789afd09c6c224d65b9667a59a16d287c98d5448d",
+  "blockout.generated.json": "5192c4ac0c5c02e22d93da08dac3241b16ac3f075e249c4638a73dde5debd2e5",
+  "s34-als-dao.glb": "c0cb5b1a5cb348482254ffe965f692a5f6453d53a56536e16d1c45fa3aa7e679",
+  "sneeze-mount-plan.json": "ee5d5ef072889685d34ac6097d8e986e38ebef602b46c5fa02a6876f7151cb6b"
+ },
+ "assets": {
+  "unit-cube.glb": "66af9d7110fb7ca21d5323ed5c3261747a282e8378290911ce4064152f99e735"
+ },
+ "counts": {
+  "cards": 23,
+  "zones": 6,
+  "agents": 6,
+  "primitives": 27,
+  "roads": 7,
+  "planNodes": 50,
+  "resourceNodes": 27
+ },
+ "evals": {
+  "unique_ids": true,
+  "parents_first": true,
+  "single_root": true,
+  "umbrella_in_names": true,
+  "name_limit": true,
+  "agents_hold_no_reserved_right": true,
+  "reserved_actions_verbatim": true,
+  "three_human_seats": true,
+  "no_agent_on_council": true,
+  "cited": true,
+  "omega_carded": true,
+  "omega_off_council": true,
+  "omega_voice_bound": true,
+  "agents_bound": true,
+  "coordinator_bound": true,
+  "advisors_scripted": true,
+  "avatar_roles_known": true,
+  "buildings_resolve": true,
+  "council_not_a_zone": true,
+  "nothing_invented": true,
+  "every_spec_entry_carded": true,
+  "rp1_names_and_bounds": true,
+  "resource_url_fits": true,
+  "glb_parses": true,
+  "glb_card_tree_matches": true,
+  "glb_primitives_tagged": true
+ },
+ "gates": {
+  "1.1 generated core": "done",
+  "1.2 GLB parsed + card tree verified (JavaScript)": "done",
+  "1.2n native fastgltf load": "open: Sneeze not checked out here",
+  "1.3 SOM mount plan": "prepared-not-mounted",
+  "1.4 rendered frame": "open"
+ }
+}

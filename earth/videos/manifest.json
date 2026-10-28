@@ -1,0 +1,523 @@
+{
+  "total": 161,
+  "captured": 74,
+  "failed": 1,
+  "results": [
+    {
+      "slug": "cancer-dao",
+      "ok": true,
+      "size": 526139,
+      "frames": 24
+    },
+    {
+      "slug": "climate-dao",
+      "ok": true,
+      "size": 348598,
+      "frames": 24
+    },
+    {
+      "slug": "ecology-dao",
+      "ok": true,
+      "size": 380981,
+      "frames": 24
+    },
+    {
+      "slug": "education-dao",
+      "ok": true,
+      "size": 393655,
+      "frames": 24
+    },
+    {
+      "slug": "empathic-x",
+      "ok": true,
+      "size": 697246,
+      "frames": 24
+    },
+    {
+      "slug": "locator-x",
+      "ok": true,
+      "size": 553086,
+      "frames": 24
+    },
+    {
+      "slug": "sf-financial",
+      "ok": true,
+      "size": 190516,
+      "frames": 24
+    },
+    {
+      "slug": "autonomous-organizations",
+      "ok": true,
+      "fallback": false,
+      "size": 526332,
+      "frames": 24
+    },
+    {
+      "slug": "biota-blockchain",
+      "ok": true,
+      "fallback": false,
+      "size": 485762,
+      "frames": 24
+    },
+    {
+      "slug": "diagnostic-x",
+      "ok": true,
+      "fallback": false,
+      "size": 496726,
+      "frames": 24
+    },
+    {
+      "slug": "nola-bywater",
+      "ok": true,
+      "fallback": false,
+      "size": 551502,
+      "frames": 24
+    },
+    {
+      "slug": "nola-central-city",
+      "ok": true,
+      "fallback": false,
+      "size": 586068,
+      "frames": 24
+    },
+    {
+      "slug": "nola-french-quarter",
+      "ok": true,
+      "fallback": false,
+      "size": 500691,
+      "frames": 24
+    },
+    {
+      "slug": "nola-garden-district",
+      "ok": true,
+      "fallback": false,
+      "size": 477379,
+      "frames": 24
+    },
+    {
+      "slug": "nola-lower-ninth",
+      "ok": true,
+      "fallback": false,
+      "size": 292844,
+      "frames": 24
+    },
+    {
+      "slug": "nola-marigny",
+      "ok": true,
+      "fallback": false,
+      "size": 542737,
+      "frames": 24
+    },
+    {
+      "slug": "nola-mid-city",
+      "ok": true,
+      "fallback": false,
+      "size": 559217,
+      "frames": 24
+    },
+    {
+      "slug": "nola-treme",
+      "ok": true,
+      "fallback": false,
+      "size": 537088,
+      "frames": 24
+    },
+    {
+      "slug": "nola-uptown",
+      "ok": true,
+      "fallback": false,
+      "size": 477135,
+      "frames": 24
+    },
+    {
+      "slug": "nola-warehouse",
+      "ok": true,
+      "fallback": false,
+      "size": 392393,
+      "frames": 24
+    },
+    {
+      "slug": "public-health-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 515015,
+      "frames": 24
+    },
+    {
+      "slug": "robotics-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 506909,
+      "frames": 24
+    },
+    {
+      "slug": "s04-curable-x",
+      "ok": true,
+      "fallback": false,
+      "size": 538178,
+      "frames": 24
+    },
+    {
+      "slug": "s05-biopharma-go",
+      "ok": true,
+      "fallback": false,
+      "size": 497507,
+      "frames": 24
+    },
+    {
+      "slug": "s06-blockchain",
+      "ok": true,
+      "fallback": false,
+      "size": 481179,
+      "frames": 24
+    },
+    {
+      "slug": "s07-divine-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 436994,
+      "frames": 24
+    },
+    {
+      "slug": "s09-astrological-x",
+      "ok": true,
+      "fallback": false,
+      "size": 380947,
+      "frames": 24
+    },
+    {
+      "slug": "s11-molecular",
+      "ok": true,
+      "fallback": false,
+      "size": 454873,
+      "frames": 24
+    },
+    {
+      "slug": "s12-parking-smart-x",
+      "ok": true,
+      "fallback": false,
+      "size": 391606,
+      "frames": 24
+    },
+    {
+      "slug": "s13-gonstead-x",
+      "ok": true,
+      "fallback": false,
+      "size": 499481,
+      "frames": 24
+    },
+    {
+      "slug": "s14-askdoc-x",
+      "ok": true,
+      "fallback": false,
+      "size": 455964,
+      "frames": 24
+    },
+    {
+      "slug": "s15-romanbridge-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 476212,
+      "frames": 24
+    },
+    {
+      "slug": "s16-echodawn-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 578123,
+      "frames": 24
+    },
+    {
+      "slug": "s17-curable-blockchain-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 350246,
+      "frames": 24
+    },
+    {
+      "slug": "s19-moscone-x",
+      "ok": true,
+      "fallback": false,
+      "size": 405811,
+      "frames": 24
+    },
+    {
+      "slug": "s20-cmmc",
+      "ok": true,
+      "fallback": false,
+      "size": 653232,
+      "frames": 24
+    },
+    {
+      "slug": "s21-incubator-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 323027,
+      "frames": 24
+    },
+    {
+      "slug": "s22-get-delivery-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 404639,
+      "frames": 24
+    },
+    {
+      "slug": "s23-avatar-chat",
+      "ok": true,
+      "fallback": false,
+      "size": 323227,
+      "frames": 24
+    },
+    {
+      "slug": "s24-donatello-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 779206,
+      "frames": 24
+    },
+    {
+      "slug": "s25-mypet-ai",
+      "ok": true,
+      "fallback": false,
+      "size": 384414,
+      "frames": 24
+    },
+    {
+      "slug": "s26-lyka-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 532948,
+      "frames": 24
+    },
+    {
+      "slug": "s27-genomic-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 378264,
+      "frames": 24
+    },
+    {
+      "slug": "s28-genomic-blockchain",
+      "ok": true,
+      "fallback": false,
+      "size": 511087,
+      "frames": 24
+    },
+    {
+      "slug": "s29-metaverse-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 622661,
+      "frames": 24
+    },
+    {
+      "slug": "s31-aerospace-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 536060,
+      "frames": 24
+    },
+    {
+      "slug": "s32-solar-dao",
+      "ok": true,
+      "fallback": false,
+      "size": 371471,
+      "frames": 24
+    },
+    {
+      "slug": "chi-pilsen",
+      "ok": true,
+      "fallback": true,
+      "size": 26544,
+      "frames": 24
+    },
+    {
+      "slug": "sf-pacific-heights",
+      "ok": true,
+      "fallback": false,
+      "size": 442365,
+      "frames": 24
+    },
+    {
+      "slug": "sf-presidio",
+      "ok": true,
+      "fallback": false,
+      "size": 404346,
+      "frames": 24
+    },
+    {
+      "slug": "sf-soma",
+      "ok": true,
+      "fallback": false,
+      "size": 441433,
+      "frames": 24
+    },
+    {
+      "slug": "sf-sunset",
+      "ok": true,
+      "fallback": false,
+      "size": 646753,
+      "frames": 24
+    },
+    {
+      "slug": "agentic-payments",
+      "ok": true,
+      "fallback": false,
+      "size": 319573,
+      "frames": 24
+    },
+    {
+      "slug": "agents-deploy-infrastructure",
+      "ok": true,
+      "fallback": false,
+      "size": 343751,
+      "frames": 24
+    },
+    {
+      "slug": "chi-bridgeport",
+      "ok": true,
+      "fallback": false,
+      "size": 445188,
+      "frames": 24
+    },
+    {
+      "slug": "chi-chinatown",
+      "ok": true,
+      "fallback": false,
+      "size": 243338,
+      "frames": 24
+    },
+    {
+      "slug": "chi-hyde-park",
+      "ok": true,
+      "fallback": false,
+      "size": 524984,
+      "frames": 24
+    },
+    {
+      "slug": "chi-lincoln-park",
+      "ok": true,
+      "fallback": false,
+      "size": 445047,
+      "frames": 24
+    },
+    {
+      "slug": "chi-little-village",
+      "ok": true,
+      "fallback": false,
+      "size": 245986,
+      "frames": 24
+    },
+    {
+      "slug": "chi-loop",
+      "ok": false,
+      "error": "chi-loop: ReferenceError: body is not defined"
+    },
+    {
+      "slug": "chi-ohare",
+      "ok": true,
+      "fallback": false,
+      "size": 548734,
+      "frames": 24
+    },
+    {
+      "slug": "sf-nob-hill",
+      "ok": true,
+      "fallback": false,
+      "size": 401902,
+      "frames": 24
+    },
+    {
+      "slug": "sf-nopa",
+      "ok": true,
+      "fallback": false,
+      "size": 478810,
+      "frames": 24
+    },
+    {
+      "slug": "sf-north-beach",
+      "ok": true,
+      "fallback": false,
+      "size": 535583,
+      "frames": 24
+    },
+    {
+      "slug": "sf-outer-sunset",
+      "ok": true,
+      "fallback": false,
+      "size": 567218,
+      "frames": 24
+    },
+    {
+      "slug": "sf-potrero",
+      "ok": true,
+      "fallback": false,
+      "size": 541527,
+      "frames": 24
+    },
+    {
+      "slug": "sf-richmond",
+      "ok": true,
+      "fallback": false,
+      "size": 534378,
+      "frames": 24
+    },
+    {
+      "slug": "sf-rincon-hill",
+      "ok": true,
+      "fallback": false,
+      "size": 304773,
+      "frames": 24
+    },
+    {
+      "slug": "sf-russian-hill",
+      "ok": true,
+      "fallback": false,
+      "size": 477895,
+      "frames": 24
+    },
+    {
+      "slug": "sf-south-beach",
+      "ok": true,
+      "fallback": false,
+      "size": 421848,
+      "frames": 24
+    },
+    {
+      "slug": "sf-telegraph-hill",
+      "ok": true,
+      "fallback": false,
+      "size": 544529,
+      "frames": 24
+    },
+    {
+      "slug": "sf-tenderloin",
+      "ok": true,
+      "fallback": false,
+      "size": 407888,
+      "frames": 24
+    },
+    {
+      "slug": "sf-visitacion",
+      "ok": true,
+      "fallback": false,
+      "size": 580882,
+      "frames": 24
+    },
+    {
+      "slug": "sf-western-addition",
+      "ok": true,
+      "fallback": false,
+      "size": 482300,
+      "frames": 24
+    },
+    {
+      "slug": "sf-yerba-buena",
+      "ok": true,
+      "fallback": false,
+      "size": 397727,
+      "frames": 24
+    }
+  ]
+}
